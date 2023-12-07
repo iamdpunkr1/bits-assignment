@@ -1,10 +1,13 @@
-
+import LoginForm from "./pages/LoginForm"
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   
 
   return (
-    <div className="text-2xl">BITS-Assignment</div>
+    <Routes>
+      <Route path="/" element={<LoginForm/>} />
+    </Routes>
   )
 }
 
