@@ -1,13 +1,20 @@
 import LoginForm from "./pages/LoginForm"
-import { Routes, Route } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements,  Route,  RouterProvider } from 'react-router-dom'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/">
+      <Route index element={<LoginForm/>} />
+      <Route path="/dashboard" element={<div>Dashboard</div>} />
+    </Route>
+  )
+)
 
 function App() {
   
 
   return (
-    <Routes>
-      <Route path="/" element={<LoginForm/>} />
-    </Routes>
+    <RouterProvider router={router}/>
   )
 }
 
